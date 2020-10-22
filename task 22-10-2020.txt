@@ -1,0 +1,56 @@
+let strArray = [ "11", "2", "2", "11", "11", "5", "7", "9"];
+
+
+let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+
+
+console.log([...new Set(findDuplicates(strArray))]) // Unique duplicates
+
+
+
+
+
+
+
+__________________________________________________________________________________________________________
+
+    var max = 1000;
+    var min = 1;
+    var list = [];
+    var done = false, 
+        first = true, 
+        sum = 0,
+        maxsqrt = Math.floor(Math.sqrt(max)),
+        sumlist = [];
+
+    for(var i = min; i <= max; i++) {
+        if (isPalindrome(i)) {
+            done = false;
+
+            //Start checking the number list
+            for (var j = 1; j <= maxsqrt; j++) {
+                first = true;
+                sum = 0;
+                sumlist = [];
+
+                for(var k = j; k <= maxsqrt; k++) {
+                    sumlist.push(k);
+                    sum = sum + (k * k);
+
+                    if (!first && sum == i) {
+                        list.push({"Value":i,"Sums":sumlist});
+                        done = true;
+                    }
+                    else if (!first && sum > i) {
+                        break;
+                    }
+
+                    first = false;
+                    if (done) break;
+                }
+
+                if (done) break;
+            }
+        }
+    }
+
