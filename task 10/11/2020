@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<style>
+.em {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.active, .em:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 30px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+  
+</style>
+</head>
+<body>
+
+<h2>Pouriya test</h2>
+
+<button class="em">Natsa Email</button>
+<div class="panel">
+  <p>this email contain Natasa email.</p>
+</div>
+
+<button class="em">Josip Email</button>
+<div class="panel">
+  <p>this email contain Josip email.</p>
+</div>
+
+<button class="em">Drazen Email</button>
+<div class="panel">
+  <p>this email contain Drazen email.</p>
+</div>
+
+ <button class="em">Mladen Email</button>
+ <div class="panel">
+  <p>this email contain Mladen email.</p>
+ </div>
+
+  <script>
+  
+var email = document.getElementsByClassName("em");
+var i;
+
+for (i = 0; i < email.length; i++) {
+  email[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
